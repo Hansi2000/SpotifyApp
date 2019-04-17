@@ -1,0 +1,18 @@
+﻿@page "/"
+@using SpotifyApp.Services
+@inject SpotifyService spotifyService
+
+
+<h1>Hello, world!</h1>
+
+<p>@title</p>
+
+@functions {
+
+    private string title;
+
+    protected override void OnInit()
+    {
+        title = spotifyService.GetTrack("3Hvu1pq89D4R0lyPBoujSv").Name;
+    }
+}
